@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="{% url 'events:list' %}">Meetup Management</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'events:list' %}">Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'events:create' %}">Create</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'events:dashboard' %}">Dashboard</a>
+            </li>
+        </ul>
+    </div>
+    {% if user.is_authenticated %}
+        <span class="navbar-text">
+      <a class="text-white" href="{% url 'logout' %}">Logout</a>
+    </span>
+    {% else %}
+        <a class="text-white" href="{% url 'login' %}">Login</a>
+    {% endif %}
+</nav>

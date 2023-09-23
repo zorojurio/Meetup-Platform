@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block extra_head %}
+
+{% endblock %}
+
+
+{% block title %}
+    Events
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-6"></div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header">
+                        Save Event
+                    </div>
+                    <div class="card-body">
+                        <form method="post" class="my-form">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <div class="text-right">
+                                <button class="btn btn-success mt-4" type="submit">Extract Event</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+
+

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block extra_head %}
+
+{% endblock %}
+
+
+{% block title %}
+    Dashboard
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12 mb-5">
+                <h2 class="text-center text-secondary">Dashboard</h2>
+            </div>
+            <div class="col-4">
+                <div class="card text-white bg-success mb-3">
+                    <div class="text-center card-header">Passed Events</div>
+                    <div class="card-body">
+                        <h1 class="text-center display-1">{{ passed_event_count }}</h1>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card text-white bg-info mb-3">
+                    <div class="text-center card-header">Total Events</div>
+                    <div class="card-body">
+                        <h1 class="text-center display-1">{{  total_event_count }}</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card text-white bg-warning mb-3" >
+                    <div class="text-center card-header">Paid Events</div>
+                    <div class="card-body">
+                        <h1 class="display-1 text-center">{{ paid_event_count }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+
+
